@@ -5,13 +5,20 @@ import numpy as np
 # Priors on unknown parameters
 theta = pymc.Beta('theta1',1,1)
 
+n = pymc.DiscreteUniform('n',1,500)
+
 # Observed Counts
 
 #k1 ~ dbin(theta1,n1)
 
 #k2 ~ dbin(theta2,n2)
+k = []
 
-k = pymc.Binomial('k', n=10, p=theta, value=np.array([3,1,4,5]),observed=True)
+
+values = [16, 18, 22, 25, 27]
+
+for i in range(0, 5):
+    k.append( pymc.Binomial('k', n=n, p=theta, value=np.array([values[i]]),observed=True))
 
 
 # Difference between Rates

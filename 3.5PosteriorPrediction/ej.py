@@ -5,6 +5,7 @@ import numpy as np
 # Priors on unknown parameters
 theta = pymc.Beta('theta1',1,1)
 
+
 # Observed Counts
 
 #k1 ~ dbin(theta1,n1)
