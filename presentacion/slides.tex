@@ -1,0 +1,75 @@
+\documentclass[10pt, compress]{beamer}
+
+\usetheme{m}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage[spanish,es-tabla,es-noquoting,activeacute]{babel}
+\setcounter{tocdepth}{3}
+\decimalpoint
+
+\pgfplotscreateplotcyclelist{cuatro}{%
+{mark=*, color=red, mark size=3},
+{mark=triangle*, color=blue, mark size=3},
+{mark=square*, color=brown, mark size=4},
+{mark=x, color=black, mark size=4}
+}
+
+\usetikzlibrary{backgrounds,arrows,positioning,automata,shadows}
+\usepackage[font={large,bf}]{caption}
+
+\newcommand{\graphic}[1]{
+    \resizebox{0.45\textwidth}{0.35\textheight}{
+        \input{graficos/#1}
+    }
+}
+
+\usepackage{multicol}
+\usepackage[backend=bibtex,sorting=ynt]{biblatex}
+
+\addbibresource{bib}
+
+\newcommand{\shortt}{Cuando los chicos son mejores}
+
+
+\title{Cuando los chicos son mejores}
+\subtitle{When children are better (or at least more open-minded) learners than adults: Developmental differences in learning the forms of causal relationships}
+
+\author{Escrito por: Lucas, et al., aceptado en Diciembre 2013 \\(Universidades: Edinburhgh y Berkeley)}
+
+\institute{
+\begin{center}
+Presentado por: Luciano Gandini y Pablo Brusco\\
+ Departamento de Computación, FCEN, UBA \\
+\vspace{0.2cm}
+\end{center}
+}
+
+\begin{document}
+
+\maketitle
+
+
+% \begin{frame}
+% \frametitle{Contenidos}
+% \tableofcontents
+% \end{frame}
+
+\section{Experimento}
+\input{experimento}
+
+\section{Introducción}
+\input{motivacion}
+
+\section{Metodología}
+\input{metodologia}
+
+\section{Conclusión}
+\input{conclusion}
+
+\plain{}{Preguntas}
+
+\end{document}
